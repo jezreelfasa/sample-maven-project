@@ -4,8 +4,10 @@ pipeline {
   stage('maven install') {
     steps {
       // One or more steps need to be included within the steps block.
-      withMaven(maven: 'maven') {
+     withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'maven', mavenSettingsConfig: '', traceability: true) {
         sh 'mvn clean install'
+}
+        
    
 }
     }
@@ -13,5 +15,5 @@ pipeline {
 
 }
 
-}
+
 
