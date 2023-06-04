@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    stages {
+  stage('maven install') {
+    steps {
+      
+     withMaven(maven: 'maven',  traceability= true) {
+        sh 'mvn clean install'
+}
+        
+   
+}
+    }
+  }
+
+}
+
+
+
