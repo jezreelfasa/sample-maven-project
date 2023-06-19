@@ -1,0 +1,16 @@
+pipeline {
+agent any
+
+stages {
+  stage('mavin install') {
+    steps {
+    withMaven(maven: 'maven') {
+    sh 'mvn clean install'
+}
+
+  }
+
+  }
+
+}
+}
